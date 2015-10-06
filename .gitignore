@@ -2,6 +2,8 @@
 Thumbs.db
 ehthumbs.db
 
+Library/
+
 # Folder config file
 Desktop.ini
 
@@ -41,3 +43,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.suo
+*.sln
+UnityVS.GoNoMa.CSharp.csproj
