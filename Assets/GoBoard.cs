@@ -56,7 +56,7 @@ public class GoBoard : MonoBehaviour
         {
             Arguments = "--mode gtp",
             CreateNoWindow = true,
-            FileName = "gnugo.exe",
+            FileName = "GnuGo/gnugo.exe",
             UseShellExecute = false,
             RedirectStandardOutput = true,
             RedirectStandardInput = true,
@@ -78,12 +78,7 @@ public class GoBoard : MonoBehaviour
 
                 lock(_moveList)
                 {
-                    _moveList.Enqueue(new Move()
-                    {
-                        x = black[0] - 'A',
-                        y = int.Parse(black.Substring(1)) -1,
-                        player = Player.Black
-                    });
+                    _moveList.Enqueue(ParseMove(black, Player.Black));
                 }
 
                 Thread.Sleep(2000);
@@ -94,16 +89,21 @@ public class GoBoard : MonoBehaviour
 
                 lock (_moveList)
                 {
-                    _moveList.Enqueue(new Move()
-                    {
-                        x = white[0] - 'A',
-                        y = int.Parse(white.Substring(1)) -1,
-                        player = Player.White
-                    });
+                    _moveList.Enqueue(ParseMove(white, Player.White));
                 }
                 Thread.Sleep(2000);
             }
         }
+    }
+
+    private static Move ParseMove(string coord, Player player)
+    {
+        return new Move()
+        {
+            x = coord[0] < 'I' ? coord[0] - 'A' : coord[0] - 'B',
+            y = int.Parse(coord.Substring(1)) - 1,
+            player = player
+        };
     }
 
     private string TrimStuff(string v)
