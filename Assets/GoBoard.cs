@@ -16,7 +16,7 @@ public class GoBoard : MonoBehaviour
     public GameObject BlackPiece;
     public GameObject WhitePiece;
 
-    public double GridScale = 0.2;
+    private double GridScale = 0.2;
 
     private float BoardHeight;
 
@@ -27,22 +27,30 @@ public class GoBoard : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        BoardHeight = GetComponent<MeshRenderer>().bounds.max.y + 0.01f;
+        var gobanMesh = transform.FindChild("goban");
+        GridScale = gobanMesh.localScale.x / 5f;
+        BoardHeight = gobanMesh.GetComponent<MeshRenderer>().bounds.size.y + 0.01f;
         for (int x = 0; x < GridWidth; x++)
         {
             var line = Instantiate(BoardLine);
+            line.transform.parent = transform;
+            line.transform.localPosition = Vector3.zero;
             var lineRenderer = line.GetComponent<LineRenderer>();
 
-            lineRenderer.SetPosition(0, GetPosition(x, 0));
-            lineRenderer.SetPosition(1, GetPosition(x, GridHeight - 1));
+            lineRenderer.SetWidth((float)GridScale * 0.1f, (float)GridScale * 0.1f);
+            lineRenderer.SetPosition(0, GetPosition(x, 0) - Vector3.up * 0.04f * (float)GridScale);
+            lineRenderer.SetPosition(1, GetPosition(x, GridHeight - 1) - Vector3.up * 0.04f * (float)GridScale);
         }
         for (int y = 0; y < GridHeight; y++)
         {
             var line = Instantiate(BoardLine);
+            line.transform.parent = transform;
+            line.transform.localPosition = Vector3.zero;
             var lineRenderer = line.GetComponent<LineRenderer>();
 
-            lineRenderer.SetPosition(0, GetPosition(0, y));
-            lineRenderer.SetPosition(1, GetPosition(GridHeight - 1, y));
+            lineRenderer.SetWidth((float)GridScale*0.1f, (float)GridScale*0.1f);
+            lineRenderer.SetPosition(0, GetPosition(0, y) - Vector3.up * 0.04f * (float)GridScale);
+            lineRenderer.SetPosition(1, GetPosition(GridHeight - 1, y) - Vector3.up * 0.04f * (float)GridScale);
         }
 
         _engineThread = new Thread(EngineLoop);
@@ -51,7 +59,6 @@ public class GoBoard : MonoBehaviour
 
     private void EngineLoop()
     {
-        var env = Environment.CurrentDirectory;
         using (var process = Process.Start(new ProcessStartInfo()
         {
             Arguments = "--mode gtp",
@@ -113,7 +120,7 @@ public class GoBoard : MonoBehaviour
 
     private Vector3 GetPosition(int x, int y)
     {
-        return new Vector3((float)((x + 0.5 - GridWidth / 2.0) * GridScale), (float)((y + 0.5 - GridHeight / 2.0) * GridScale), -BoardHeight);
+        return new Vector3((float)((x + 0.5 - GridWidth / 2.0) * GridScale), BoardHeight, (float)((y + 0.5 - GridHeight / 2.0) * GridScale));
     }
 
     // Update is called once per frame
@@ -125,14 +132,12 @@ public class GoBoard : MonoBehaviour
             {
                 var move = _moveList.Dequeue();
 
-                Instantiate(move.player == Player.Black ? BlackPiece : WhitePiece, Rot(GetPosition(move.x, move.y)) + Vector3.up * 0.04f, BlackPiece.transform.rotation);
+                var piece = (GameObject)Instantiate(move.player == Player.Black ? BlackPiece : WhitePiece, Vector3.zero, BlackPiece.transform.rotation, transform);
+                piece.transform.parent = transform;
+                piece.transform.localPosition = GetPosition(move.x, move.y) + Vector3.up * 0.2f * (float)GridScale;
+                piece.transform.localScale = new Vector3(1, 0.5f, 1) * (float)GridScale;
             }
         }
-    }
-
-    private Vector3 Rot(Vector3 vector3)
-    {
-        return Quaternion.AngleAxis(-90, Vector3.left) * vector3;
     }
 
     private struct Move
