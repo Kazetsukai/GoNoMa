@@ -161,6 +161,8 @@
     <Compile Include="Assets\Gaia\Scripts\Editor\StamperEditor.cs" />
     <Compile Include="Assets\Gaia\Scripts\Editor\TerrainHelperEditor.cs" />
     <Compile Include="Assets\Gaia\Scripts\Editor\TexturePickerEditor.cs" />
+    <Compile Include="Assets\OSPNative\editor\ONSPAudioSourceEditor.cs" />
+    <Compile Include="Assets\OSPNative\editor\ONSPReflectionCustomGUI.cs" />
     <Compile Include="Assets\SteamVR\Editor\SteamVR_Editor.cs" />
     <Compile Include="Assets\SteamVR\Editor\SteamVR_RenderModelEditor.cs" />
     <Compile Include="Assets\SteamVR\Editor\SteamVR_Settings.cs" />
@@ -170,7 +172,6 @@
   <ItemGroup>
     <None Include="Assets\Gaia\3rd Party Samplers\3DForge\Documents\Village Exteriors Kit v1.2.1 - user guide.txt" />
     <None Include="Assets\Gaia\3rd Party Samplers\GameTexturesDotCom\_Readme.txt" />
-    <None Include="Assets\Gaia\3rd Party Samplers\MotuProprio\RealRock Vol I\Readme.txt" />
     <None Include="Assets\Gaia\3rd Party Samplers\README.txt" />
     <None Include="Assets\Gaia\3rd Party Samplers\Turboscalpeur\Readme.txt" />
     <None Include="Assets\Gaia\Documentation\Release Notes v1_5_0.txt" />

@@ -256,7 +256,6 @@
   <ItemGroup>
     <None Include="Assets\Gaia\3rd Party Samplers\3DForge\Documents\Village Exteriors Kit v1.2.1 - user guide.txt" />
     <None Include="Assets\Gaia\3rd Party Samplers\GameTexturesDotCom\_Readme.txt" />
-    <None Include="Assets\Gaia\3rd Party Samplers\MotuProprio\RealRock Vol I\Readme.txt" />
     <None Include="Assets\Gaia\3rd Party Samplers\README.txt" />
     <None Include="Assets\Gaia\3rd Party Samplers\Turboscalpeur\Readme.txt" />
     <None Include="Assets\Gaia\Documentation\Release Notes v1_5_0.txt" />
