@@ -15,7 +15,10 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters: []
-  m_AudioMixerGroupViews: []
+  m_AudioMixerGroupViews:
+  - guids:
+    - c4b6bab40195f0347b1eae7c6756fe79
+    name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500003}
 --- !u!243 &24300001
@@ -31,6 +34,7 @@ AudioMixerGroupController:
   m_Pitch: e0de41a813e1eaa4a80ba13de26bb662
   m_Effects:
   - {fileID: 24400002}
+  - {fileID: 244000010928156442}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -56,5 +60,54 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 3ee677c3b2b0e6a41b35ef7ff3d07366
-  m_FloatValues: {}
+  m_FloatValues:
+    5577c6c03db137e4b8d3936da58338b3: 0.5
+    0a7e0083fd49fd046bc4faa79f9adf97: 1
+    3c48be64a1e0bd24ebe2dde0a1cda39c: 0.356
+    87899c180d84123438b5e4cf8b3ba590: 0
+    a708655855fe2a3439838ec877bcfd2c: 0.97
+    07b7c8580521e64438eda9f2951877df: 11
+    682a9209e17fa4743a1366898f5f9030: 6
+    00c75379b75e5044093c7aecc7fbe1a6: 5
+    d9aa441c2a913ad48b9c1a88f5b0c123: 0.356
+    c9fbc6dc1a64144459a7f77772d922ea: 0.97
+    3876676d967eb5142a12c3d861df853e: 0.545
+    67b60c3f9da482549ac48092778129e2: 1
   m_TransitionOverrides: {}
+--- !u!244 &244000010928156442
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 18d64271df73c134e977b51a1488924f
+  m_EffectName: OculusSpatializerReflection
+  m_MixLevel: f4f6bc1ef03b95e4d8c5eac3a834595d
+  m_Parameters:
+  - m_ParameterName: GScale
+    m_GUID: 0a7e0083fd49fd046bc4faa79f9adf97
+  - m_ParameterName: E.Rflt On
+    m_GUID: 67b60c3f9da482549ac48092778129e2
+  - m_ParameterName: E.Rflt Rev On
+    m_GUID: 87899c180d84123438b5e4cf8b3ba590
+  - m_ParameterName: Room X
+    m_GUID: 682a9209e17fa4743a1366898f5f9030
+  - m_ParameterName: Room Y
+    m_GUID: 00c75379b75e5044093c7aecc7fbe1a6
+  - m_ParameterName: Room Z
+    m_GUID: 07b7c8580521e64438eda9f2951877df
+  - m_ParameterName: Left
+    m_GUID: a708655855fe2a3439838ec877bcfd2c
+  - m_ParameterName: Right
+    m_GUID: c9fbc6dc1a64144459a7f77772d922ea
+  - m_ParameterName: Up
+    m_GUID: d9aa441c2a913ad48b9c1a88f5b0c123
+  - m_ParameterName: Down
+    m_GUID: 3c48be64a1e0bd24ebe2dde0a1cda39c
+  - m_ParameterName: Behind
+    m_GUID: 3876676d967eb5142a12c3d861df853e
+  - m_ParameterName: Front
+    m_GUID: 5577c6c03db137e4b8d3936da58338b3
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
