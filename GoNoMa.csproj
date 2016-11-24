@@ -228,6 +228,7 @@
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_TrackedObject.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_UpdatePoses.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Utils.cs" />
+    <Compile Include="Assets\StoneSound.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Gaia\3rd Party Samplers\3DForge\Documents\Village Exteriors Kit v1.2.1 - user guide.txt" />

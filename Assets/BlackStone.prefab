@@ -9,17 +9,16 @@ GameObject:
   m_Component:
   - 4: {fileID: 410696}
   - 33: {fileID: 3309946}
-  - 135: {fileID: 13572334}
   - 23: {fileID: 2395924}
   - 82: {fileID: 82000011012482092}
   - 114: {fileID: 114000012146324038}
-  - 54: {fileID: 54000012064056826}
+  - 114: {fileID: 114000011438693346}
   m_Layer: 0
   m_Name: BlackStone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &410696
 Transform:
@@ -29,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 109730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.1, z: 0.2}
+  m_LocalScale: {x: 0.2, y: 0.104, z: 0.2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +42,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
+  m_MotionVectors: 0
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
@@ -70,18 +69,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109730}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!135 &13572334
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 109730}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -117,21 +104,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 109730}
   m_IsPrefabParent: 1
---- !u!54 &54000012064056826
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 109730}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!82 &82000011012482092
 AudioSource:
   m_ObjectHideFlags: 1
@@ -142,7 +114,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300001, guid: 2fe33580899647c459afd9358d19cbec,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: a05d082cd207b4b12a47c089be8b7a62, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -152,7 +124,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 1.01
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -207,6 +179,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114000011438693346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534d1fcd9a7503648857cdb8bbcdd119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StoneSounds:
+  - {fileID: 8300000, guid: 5137c315bae4c084fa759ccd5637203d, type: 3}
+  - {fileID: 8300000, guid: 72c9da2b827b7b548913a805157a4924, type: 3}
+  - {fileID: 8300000, guid: af4c6a55ea8897c4091303875ce1f7fa, type: 3}
+  - {fileID: 8300000, guid: 672d161d98ca9324c972534801d41b89, type: 3}
 --- !u!114 &114000012146324038
 MonoBehaviour:
   m_ObjectHideFlags: 1
