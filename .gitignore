@@ -48,3 +48,4 @@ Temporary Items
 *.suo
 *.sln
 UnityVS.GoNoMa.CSharp.csproj
+Build/
