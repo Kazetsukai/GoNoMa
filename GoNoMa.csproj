@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>5.4.3f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -189,7 +191,11 @@
     <Compile Include="Assets\Gaia\Scripts\ValueAdds\FrameRateManager.cs" />
     <Compile Include="Assets\Gaia\Scripts\ValueAdds\Growth.cs" />
     <Compile Include="Assets\Gaia\Scripts\ValueAdds\ScreenShotter.cs" />
+    <Compile Include="Assets\GameLogic\GameController.cs" />
+    <Compile Include="Assets\GameLogic\GnuGoPlayerController.cs" />
+    <Compile Include="Assets\GameLogic\Player.cs" />
     <Compile Include="Assets\GoBoard.cs" />
+    <Compile Include="Assets\GameLogic\Move.cs" />
     <Compile Include="Assets\OSPNative\scripts\ONSPAudioSource.cs" />
     <Compile Include="Assets\OSPNative\scripts\ONSPVersion.cs" />
     <Compile Include="Assets\OSPNative\scripts\helpers\ONSPReflectionZone.cs" />
