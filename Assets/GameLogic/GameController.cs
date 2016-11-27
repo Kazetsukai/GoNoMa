@@ -4,8 +4,8 @@ using UnityEngine;
 public class GameController
 {
     private GoBoard _board;
-    private GnuGoPlayerController _blackPlayer;
-    private GnuGoPlayerController _whitePlayer;
+    private PlayerController _blackPlayer;
+    private PlayerController _whitePlayer;
 
     public Player CurrentPlayer { get; private set; }
     public int CurrentTurn { get; internal set; }
@@ -29,16 +29,16 @@ public class GameController
         SwapTurn();
     }
 
-    public void SetPlayer(GnuGoPlayerController controller, Player player)
+    public void SetPlayer(PlayerController controller, Player player)
     {
         if (player == Player.Black)
         {
-            GameObject.Destroy(_blackPlayer);
+            if (_blackPlayer != null) _blackPlayer.Destroy();
             _blackPlayer = controller;
         }
         else
         {
-            GameObject.Destroy(_whitePlayer);
+            if (_whitePlayer != null) _whitePlayer.Destroy();
             _whitePlayer = controller;
         }
 

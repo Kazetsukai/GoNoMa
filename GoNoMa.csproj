@@ -192,10 +192,13 @@
     <Compile Include="Assets\Gaia\Scripts\ValueAdds\Growth.cs" />
     <Compile Include="Assets\Gaia\Scripts\ValueAdds\ScreenShotter.cs" />
     <Compile Include="Assets\GameLogic\GameController.cs" />
+    <Compile Include="Assets\GameLogic\PlayerController.cs" />
+    <Compile Include="Assets\GameLogic\VivePlayerController.cs" />
     <Compile Include="Assets\GameLogic\GnuGoPlayerController.cs" />
+    <Compile Include="Assets\GameLogic\Move.cs" />
     <Compile Include="Assets\GameLogic\Player.cs" />
     <Compile Include="Assets\GoBoard.cs" />
-    <Compile Include="Assets\GameLogic\Move.cs" />
+    <Compile Include="Assets\GoPointer.cs" />
     <Compile Include="Assets\OSPNative\scripts\ONSPAudioSource.cs" />
     <Compile Include="Assets\OSPNative\scripts\ONSPVersion.cs" />
     <Compile Include="Assets\OSPNative\scripts\helpers\ONSPReflectionZone.cs" />

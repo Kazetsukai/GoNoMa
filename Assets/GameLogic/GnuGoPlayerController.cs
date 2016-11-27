@@ -5,11 +5,8 @@ using System.IO;
 using System.Threading;
 using UnityEngine;
 
-public class GnuGoPlayerController : MonoBehaviour
+public class GnuGoPlayerController : PlayerController
 {
-    public Player ControlledPlayer;
-    public GameController GameController;
-
     static Thread sEngineThread;
     static Queue<Move> sMoveList = new Queue<Move>();
     static Queue<Action> sRequestList = new Queue<Action>();
@@ -30,7 +27,7 @@ public class GnuGoPlayerController : MonoBehaviour
         }
     }
 
-    public void NotifyMove(Move move, int moveNumber)
+    public override void NotifyMove(Move move, int moveNumber)
     {
         if (sLastNotifiedTurn < moveNumber)
         {
@@ -145,4 +142,9 @@ public class GnuGoPlayerController : MonoBehaviour
         return v.Trim('=').Trim();
     }
 
+    public override void Destroy()
+    {
+        sEngineThread.Abort();
+        Destroy(gameObject);
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Threading;
 using System.Diagnostics;
+using System;
 
 public class GoBoard : MonoBehaviour
 {
@@ -9,8 +10,8 @@ public class GoBoard : MonoBehaviour
     public int GridWidth = 19;
     public int GridHeight = 19;
 
-    public GnuGoPlayerController BlackPlayer;
-    public GnuGoPlayerController WhitePlayer;
+    public PlayerController BlackPlayer;
+    public PlayerController WhitePlayer;
 
     public GameObject BlackPiece;
     public GameObject WhitePiece;
@@ -60,7 +61,17 @@ public class GoBoard : MonoBehaviour
         _gameController.SetPlayer(BlackPlayer, Player.Black);
         _gameController.SetPlayer(WhitePlayer, Player.White);
     }
-    
+
+    public Coord TranslateToBoardCoord(Vector3 point)
+    {
+        var newPoint = transform.InverseTransformPoint(point);
+
+        var x = (int)(newPoint.x / GridScaleX + (GridWidth / 2.0));
+        var y = (int)(newPoint.z / GridScaleZ + (GridWidth / 2.0));
+
+        return new Coord(x, y);
+    }
+
     void Update()
     {
     }
@@ -74,8 +85,20 @@ public class GoBoard : MonoBehaviour
         piece.transform.localPosition = GetPosition(move.x, move.y) + Vector3.up * piece.transform.localScale.y / 2.4f;
     }
 
-    private Vector3 GetPosition(int x, int y)
+    public Vector3 GetPosition(int x, int y)
     {
         return new Vector3((float)((x + 0.5 - GridWidth / 2.0) * GridScaleX), BoardHeight, (float)((y + 0.5 - GridHeight / 2.0) * GridScaleZ));
+    }
+
+    public class Coord
+    {
+        public int x;
+        public int y;
+
+        public Coord(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
     }
 }
