@@ -30,7 +30,7 @@ public class GoBoard : MonoBehaviour
 
     void Start()
     {
-        var gobanMesh = transform.FindChild("goban");
+        var gobanMesh = transform.Find("goban");
         GridScaleZ = gobanMesh.localScale.z / 5f;
         GridScaleX = gobanMesh.localScale.x / 5f;
         BoardHeight = gobanMesh.GetComponent<MeshRenderer>().bounds.size.y + 0.22f * (float)GridScaleZ;
